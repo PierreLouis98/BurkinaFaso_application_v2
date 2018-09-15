@@ -1,0 +1,246 @@
+<ion-header>
+    <ion-navbar [color]="c">
+        <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{selectedItem.note}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager>
+
+        <!-- ATTENTION !!!: INDEX EVOLUE COMME ETAPE !! (PAS COMME QUESTION)-->
+
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round large [color]="c" (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only round large [color]="c" (click)="play()">
+            <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only round large [color]="c" (click)="stop()">
+            <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+
+            <h2>Question 1</h2>
+            <ion-list radio-group [(ngModel)]="actor">
+                <button ion-button [color]="c" round large text-wrap> {{selectedItem.question[0][0]}}</button>
+                <ion-item class="item item-text-wrap">
+                    <ion-label>{{selectedItem.question[0][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[0][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[0][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[0][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round large [color]="c" (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only round large [color]="c" (click)="play()">
+            <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only round large [color]="c" (click)="stop()">
+            <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+            <h2>Question 2</h2>
+            <ion-list radio-group [(ngModel)]="actor2">
+                <button ion-button [color]="c" round large text-wrap> {{selectedItem.question[1][0]}}</button>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[1][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[1][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[1][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[1][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round large [color]="c" (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only round large [color]="c" (click)="play()">
+            <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only round large [color]="c" (click)="stop()">
+            <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+            <h2>Question 3</h2>
+            <ion-list radio-group [(ngModel)]="actor3">
+                <button ion-button [color]="c" round large text-wrap padding="true"> {{selectedItem.question[2][0]}}</button>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[2][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[2][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[2][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[2][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round large [color]="c" (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only round large [color]="c" (click)="play()">
+            <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only round large [color]="c" (click)="stop()">
+            <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+            <h2>Question 4</h2>
+            <ion-list radio-group [(ngModel)]="actor4">
+                <button ion-button [color]="c" round large text-wrap padding="true"> {{selectedItem.question[3][0]}}</button>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[3][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[3][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[3][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[3][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+<!--    GENERE L'ERREUR 0 !
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round large [color]="c" (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only round large [color]="c" (click)="play()">
+            <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only round large [color]="c" (click)="stop()">
+            <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+            <h2>Question 5</h2>
+            <ion-list radio-group [(ngModel)]="actor4">
+                <button ion-button [color]="c" round large text-wrap padding="true"> {{selectedItem.question[4][0]}}</button>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[4][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[4][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[4][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{selectedItem.question[4][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+-->
+        
+        <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button large [color]="c" round (click)="showAlert(selectedItem.ind)">Valider</button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button large [color]="c" round>Resultat</button>
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+        <ion-slide>
+                {{selectedItem.question[0][0]}}
+                {{selectedItem.reponse[0]}}
+        </ion-slide>
+
+    </ion-slides>
+</ion-content>
+
+
+
+<!--
+
+        PROCHAINES ETAPES:
+                                -ACTIVER/DESACTIVER LE BOUTON VALIDER
+
+        
+-->
