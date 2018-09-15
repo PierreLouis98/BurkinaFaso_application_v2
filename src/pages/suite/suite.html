@@ -17,7 +17,7 @@
 
 
 
-        <ion-slide *ngFor="let question of questions">
+        <ion-slide>
             <!--         BOUTON AUDIO       -->
             <ion-row>
                 <ion-col width-50 style="text-align: right">
@@ -37,7 +37,7 @@
                 </ion-col>
             </ion-row>
 
-            <ion-list radio-group [(ngModel)]="actor[0]">
+            <ion-list radio-group [(ngModel)]="actor">
                 <div></div>
                 <h2>Question 1</h2>
                 <!-- utiliser un index -->
@@ -61,6 +61,52 @@
             </ion-list>
         </ion-slide>
 
+         <ion-slide>
+            <!--         BOUTON AUDIO       -->
+            <ion-row>
+                <ion-col width-50 style="text-align: right">
+                    <button ion-button round [color]="c" large (click)="begin()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button icon-only [color]="c" round large (click)="play()">
+                        <ion-icon name="ios-volume-up"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col width-50 style="text-align: left">
+                    <button ion-button icon-only [color]="c" round large (click)="stop()">
+                        <ion-icon name="ios-volume-off"></ion-icon>
+                </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-list radio-group [(ngModel)]="actor2">
+                <div></div>
+                <h2>Question 2</h2>
+                <!-- utiliser un index -->
+                <ion-list-header>
+                    <button ion-button large round [color]="c" text-wrap>{{this.question[1][0]}}</button>
+                </ion-list-header>
+
+                      <ion-item>
+                    <ion-label>{{this.question[1][1]}}</ion-label>
+                    <ion-radio value="1"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{this.question[1][2]}}</ion-label>
+                    <ion-radio value="2"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{this.question[1][3]}}</ion-label>
+                    <ion-radio value="3"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{this.question[1][4]}}</ion-label>
+                    <ion-radio value="4"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
 
 
 

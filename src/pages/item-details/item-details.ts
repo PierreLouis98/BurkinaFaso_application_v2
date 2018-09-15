@@ -54,14 +54,12 @@ showAlert(i)
         alert.present();
   } 
   
-
   
-  doSubmit(event) {
-
-    event.preventDefault();
-  }
+  gotoResultat(){  this.navCtrl.push(); }
   
-
+  
+  doSubmit(event) {  event.preventDefault();  }
+  
   play(){ this.audio.play(); }
   stop(){ this.audio.pause(); }
   begin(){  this.audio.currentTime = 0; }
