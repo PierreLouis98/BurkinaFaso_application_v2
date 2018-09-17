@@ -12,10 +12,9 @@ import { AlertController } from 'ionic-angular';
 
 export class ItemDetailsPage {
   selectedItem: any;
-  actor;
-  actor2;
-  actor3;
-  actor4;
+  actor: string[];
+  actor1;
+  
   c: string = "vert";
   audio: any = new Audio('assets/audio/accueil.m4a');
 
@@ -26,6 +25,10 @@ export class ItemDetailsPage {
     this.selectedItem = navParams.get('item');
 
   }
+  
+  
+  
+  
   
 showAlert(i) 
  {
@@ -55,7 +58,7 @@ showAlert(i)
   } 
   
   
-  gotoResultat(){  this.navCtrl.push(); }
+  /**   gotoResultat(){  this.navCtrl.push(); } */
   
   
   doSubmit(event) {  event.preventDefault();  }
