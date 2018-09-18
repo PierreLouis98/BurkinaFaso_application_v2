@@ -33,7 +33,7 @@
 
             <!-- attention, actor doit être un tableau 2 dimensions -->
             <h2>Question {{i + 1}}</h2>
-            <ion-list radio-group [(ngModel)]="actor1">
+            <ion-list radio-group [(ngModel)]="actor[i]">
                 <button ion-button [color]="c" round large text-wrap> {{interro[0]}}</button>
                 <ion-item class="item item-text-wrap">
                     <ion-label>{{interro[1]}}</ion-label>

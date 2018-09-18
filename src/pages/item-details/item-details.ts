@@ -12,7 +12,7 @@ import { AlertController } from 'ionic-angular';
 
 export class ItemDetailsPage {
   selectedItem: any;
-  actor: string[];
+  actor: string[] = ['0','0','0','0','0','0','0','0','0','0','0','0']
   actor1;
   
   c: string = "vert";
@@ -28,11 +28,9 @@ export class ItemDetailsPage {
   
   
   
-  
-  
 showAlert(i) 
  {
-     var rep: string[] = [this.actor, this.actor2, this.actor3, this.actor4];
+     var rep: string[] = this.actor;
 
 
      var b_rep = this.selectedItem.reponse;
