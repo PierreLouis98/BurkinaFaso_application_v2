@@ -13,16 +13,20 @@ import { AlertController } from 'ionic-angular';
 export class ItemDetailsPage {
   selectedItem: any;
   actor: string[] = ['0','0','0','0','0','0','0','0','0','0','0','0']
-  actor1;
   
   c: string = "vert";
-  audio: any = new Audio('assets/audio/accueil.m4a');
-
+  audio: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alerCtrl: AlertController) {
     // we have an item available as a nav param
     
+
+    
     this.selectedItem = navParams.get('item');
+    this.audio = [];
+    for (var i = 0; i < this.selectedItem.message.length; i++)
+        this.audio.push(new Audio('assets/audio/Francais/' + this.selectedItem.message[i] + '.m4a')); 
+            
 
   }
   
@@ -31,8 +35,6 @@ export class ItemDetailsPage {
 showAlert(i) 
  {
      var rep: string[] = this.actor;
-
-
      var b_rep = this.selectedItem.reponse;
      var gagne: number = 0;
      var pt;
@@ -42,14 +44,26 @@ showAlert(i)
         if ( rep[j] === b_rep[j] )
             gagne++;
     }
-
     pt = gagne + ' points';
 
         let alert = this.alerCtrl.create(
         {
           title: 'Score: ',
           subTitle: pt,
-          buttons: ['OK']
+        buttons: [
+        {
+          text: 'Retour',
+          handler: () => {
+            console.log('Retour clicked');
+          }
+        },
+        {
+          text: 'Résultat',
+          handler: () => {
+            console.log('Résultat clicked');
+          }
+        }
+      ]
         });
         
         alert.present();
@@ -61,9 +75,20 @@ showAlert(i)
   
   doSubmit(event) {  event.preventDefault();  }
   
-  play(){ this.audio.play(); }
-  stop(){ this.audio.pause(); }
-  begin(){  this.audio.currentTime = 0; }
+  play(i)
+  { 
+    for(var j = 0; j < this.audio.length; j++)
+    {
+        if(this.audio[j].currentTime != 0 && j!=i)
+        {
+            this.audio[j].pause();
+            this.audio[j].currentTime = 0;
+        }
+    }
+    this.audio[i].play(); 
+  }
+  stop(i){ this.audio[i].pause(); }
+  begin(i){  this.audio[i].currentTime = 0; }
   
 } 
 

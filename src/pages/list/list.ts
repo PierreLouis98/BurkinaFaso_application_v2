@@ -19,15 +19,19 @@ export class ListPage
   reponses: string[][];
   c: string = "vert";
   audio: any = new Audio('assets/audio/page_quizz.m4a');
+  messages: string[][];
   
   
-  items: Array<{ reponse: string[], ind: string, title: string, note: string, question: string[][] }>;
+  items: Array<{ reponse: string[], ind: string, title: string, note: string, question: string[][], message: string[]}>;
 
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) 
       {
+      
+/** TABLEAU DE MESSAGES AUDIO */
+        this.messages = [['1-1','1-2','1-3','1-4','1-5'], ['2-1','2-2','2-3','2-4','2-5','2-6','2-7','2-8','2-9'],['3-1','3-2','3-3','3-4','3-5','3-6'], ['4-1','4-2','4-3'], ['5-1','5-2','5-3','5-4'], ['6-1','6-2','6-3','6-4','6-5','6-6','6-7','6-8','6-9','6-10','6-11','6-12'], ['7-1','7-2','7-3'], ['8-1','8-2','8-3'], ['9-1','9-2','9-3'], ['10-1'], ['11-1'], ['12-1','12-2','12-3']];
 
 /** TABLEAU A UNE DIMENSION */
      /** Tableau de notes */
@@ -112,7 +116,7 @@ export class ListPage
       /** Tableau d'item contenant le tableau d'icon, de note et de titre */
         this.items = [];
         for (var i = 0; i < 12; i++)
-            this.items.push({ reponse: this.reponses[i], ind: this.index[i], title: this.titles + (i+1), note: this.notes[i] , question: this.questions[i]  }); 
+            this.items.push({ reponse: this.reponses[i], ind: this.index[i], title: this.titles + (i+1), note: this.notes[i] , question: this.questions[i], message: this.messages[i]  }); 
                         
         }
 
