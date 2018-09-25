@@ -3,7 +3,7 @@
         <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-        <ion-title>{{selectedItem.note}}</ion-title>
+        <ion-title>{{etape}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -15,14 +15,14 @@
 
 
 <ion-card>
-  <img src="../../assets/imgs/20160814_163321.jpg"/>
+  <img src={{image()}}/>
   <ion-card-content>
     <ion-card-title>
-      Nine Inch Nails Live
+        {{this.etape}}
       </ion-card-title>
-    <p>
-      The most popular industrial group ever, and largely
-      responsible for bringing the music to a mass audience.
+    <p> Voici les bonnes réponses:</p>
+    <p *ngFor="let interro of question">
+        {{interro}}
     </p>
   </ion-card-content>
 </ion-card>

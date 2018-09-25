@@ -11,7 +11,6 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { SuitePage } from '../pages/suite/suite';
 import { ContactPage } from '../pages/contact/contact';
-import { FichePage } from '../pages/fiche/fiche';
 import { FicheSuitePage } from '../pages/fiche-suite/fiche-suite';
 import { ResultatPage } from '../pages/resultat/resultat';
 
@@ -23,7 +22,6 @@ import { ResultatPage } from '../pages/resultat/resultat';
     ListPage,
     SuitePage,
     ContactPage,
-    FichePage,
     FicheSuitePage,
     Menu2Page,
     ResultatPage
@@ -40,7 +38,6 @@ import { ResultatPage } from '../pages/resultat/resultat';
     ListPage,
     SuitePage,
     ContactPage,
-    FichePage,
     FicheSuitePage,
     Menu2Page,
     ResultatPage

@@ -10,13 +10,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class FicheSuitePage
 {
-  selectedItem: any;
+    etape: string;
+    reponse: string[];
+    index: string;
+    question: string[];
   
   constructor(public navCtrl: NavController, public navParams: NavParams) 
   {
-        this.selectedItem = navParams.get('item');
+        this.etape = navParams.get('etape');
+        this.reponse = navParams.get('reponse');
+        this.index = navParams.get('index');
+        this.question = navParams.get('question');
   }
  
+  image()
+  {
+        return ("../../assets/imgs/et1/et" + this.index + ".JPG");
+  };
+
   doSubmit(event) { event.preventDefault(); };
 
 }

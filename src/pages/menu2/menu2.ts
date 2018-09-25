@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
-import { FichePage } from '../fiche/fiche';
 import { ListPage } from '../list/list';
 import { SuitePage } from '../suite/suite';
 
@@ -25,9 +24,7 @@ export class Menu2Page {
    gotoContact(){
         this.navCtrl.push(ContactPage);
   }
-   gotoFiche(){
-        this.navCtrl.push(FichePage);
-  }
+
   gotoQuizz(){
         this.navCtrl.push(ListPage);
   }

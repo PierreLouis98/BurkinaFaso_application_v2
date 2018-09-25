@@ -4,6 +4,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { AlertController } from 'ionic-angular';
 
+import { FicheSuitePage } from '../fiche-suite/fiche-suite';
+
 
 @Component({
   selector: 'page-item-details',
@@ -16,6 +18,7 @@ export class ItemDetailsPage {
   
   c: string = "vert";
   audio: any[];
+  b_question: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alerCtrl: AlertController) {
     // we have an item available as a nav param
@@ -28,6 +31,15 @@ export class ItemDetailsPage {
         this.audio.push(new Audio('assets/audio/Francais/' + this.selectedItem.message[i] + '.m4a')); 
             
 
+    this.b_question = [];
+    for(var k=0; k<this.selectedItem.question.length; k++)
+    {
+        this.b_question.push(this.selectedItem.question[k][0]);
+        this.b_question.push(this.selectedItem.question[k][this.selectedItem.reponse[k]]);
+    };
+
+
+
   }
   
   
@@ -39,7 +51,7 @@ showAlert(i)
      var gagne: number = 0;
      var pt;
     
-    for (var j = 0; j < 4; j++)
+    for (var j = 0; j < b_rep.length; j++)
     {
         if ( rep[j] === b_rep[j] )
             gagne++;
@@ -59,7 +71,8 @@ showAlert(i)
         },
         {
           text: 'Résultat',
-          handler: () => {
+          handler: () => 
+          {
             console.log('Résultat clicked');
           }
         }
@@ -70,7 +83,10 @@ showAlert(i)
   } 
   
   
-  /**   gotoResultat(){  this.navCtrl.push(); } */
+  gotoResultat(event)
+  {
+        this.navCtrl.push(FicheSuitePage, {etape: this.selectedItem.note, reponse: this.selectedItem.reponse, index: this.selectedItem.ind, question: this.b_question}); 
+  } 
   
   
   doSubmit(event) {  event.preventDefault();  }
