@@ -24,9 +24,10 @@ export class SuitePage {
   
   c: string = "violette";
   i: number = 0;
+  audio: any;
   index: string[];
  
-  items: Array<{ ind: string, interro: string[] }>;
+  items: Array<{ ind: string, interro: string[]}>;
   
   
   
@@ -35,6 +36,9 @@ export class SuitePage {
   
         /** Index */
         this.index = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14'];
+        
+        /** Messages audio */
+     /**   this.messages = ['1','2','3','4','5','6','7','8','9','10','11','12'];*/
         
         /** Tab de question */
         this.question = [['1.	Quelle variété de niébé comptez-vous produire ?','A.	Mobenga','B.	KVX 442','C.	Bengsiido', 'D.  Autres'],
@@ -52,10 +56,17 @@ export class SuitePage {
         ['13.	Quelle quantité de niébé souhaitez-vous vendre ?','A.	Moins de 5 sacs ','B.	Entre 5 et 20 sacs','C.	Entre 21 et 30 sacs','D.	Plus de 50 sacs'],
         ['14.	A quel prix souhaitez-vous vendre  le  Kg  votre niébé ?','A.	Entre 0 et 250 F','B.	Entre 255 et 400 F','C.	Entre 405 et 600 F','D.	Plus de 600 F']];
   
+  
+        this.audio = [];
+        for (var i = 0; i < this.index.length; i++)
+            this.audio.push(new Audio('assets/audio/Francais/' + this.index[i] + '.m4a'));
+            
         /** Tableau de slides */
         this.items = [];
         for (var j = 0; j < 14; j++)
             this.items.push({ ind: this.index[j], interro: this.question[j]}); 
+            
+        
                       
   }
 
@@ -107,9 +118,20 @@ export class SuitePage {
     alert.present()
   }
   
-  play(){ this.audio.play(); }
-  stop(){ this.audio.pause(); }
-  begin(){ this.audio.currentTime = 0; }
+  play(i)
+  { 
+    for(var j = 0; j < this.audio.length; j++)
+    {
+        if(this.audio[j].currentTime != 0 && j!=i)
+        {
+            this.audio[j].pause();
+            this.audio[j].currentTime = 0;
+        }
+    }
+    this.audio[i].play(); 
+  }
+  stop(i){ this.audio[i].pause(); }
+  begin(i){  this.audio[i].currentTime = 0; }
   
 
 

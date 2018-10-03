@@ -16,21 +16,21 @@
     <ion-slides pager>
 
 
-         <ion-slide *ngFor="let item of items">
+         <ion-slide *ngFor="let item of items; let i = index">
             <!--         BOUTON AUDIO       -->
             <ion-row>
                 <ion-col width-50 style="text-align: right">
-                    <button ion-button round [color]="c" large (click)="begin()">
+                    <button ion-button round [color]="c" large (click)="begin(i)">
             <ion-icon name="ios-arrow-back"></ion-icon>
                 </button>
                 </ion-col>
                 <ion-col width-50 style="text-align: center">
-                    <button ion-button icon-only [color]="c" round large (click)="play()">
+                    <button ion-button icon-only [color]="c" round large (click)="play(i)">
                         <ion-icon name="ios-volume-up"></ion-icon>
                 </button>
                 </ion-col>
                 <ion-col width-50 style="text-align: left">
-                    <button ion-button icon-only [color]="c" round large (click)="stop()">
+                    <button ion-button icon-only [color]="c" round large (click)="stop(i)">
                         <ion-icon name="ios-volume-off"></ion-icon>
                 </button>
                 </ion-col>
