@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { ContactPage } from '../contact/contact';
+
 
 
 
@@ -10,22 +12,15 @@ import { AlertController } from 'ionic-angular';
 })
 export class SuitePage {
 
-  actor;
-  actor2;
-  actor3;
-  actor4;
-  actor5;
- 
-  audio: any = new Audio('assets/audio/calcul.mp3');
-  audio2: any = new Audio('assets/audio/calcul2.mp3');
-  audio3: any = new Audio('assets/audio/calcul3.mp3');
+  actor: string[] = ['0','0','0','0','0','0','0','0','0','0','0','0'];
   
   question: string[][];
   
   c: string = "violette";
   i: number = 0;
-  audio: any;
+  audio: any = [];
   index: string[];
+  avertissement: string[] = ['0','0','0','0','0'];
  
   items: Array<{ ind: string, interro: string[]}>;
   
@@ -37,13 +32,12 @@ export class SuitePage {
         /** Index */
         this.index = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14'];
         
-        /** Messages audio */
-     /**   this.messages = ['1','2','3','4','5','6','7','8','9','10','11','12'];*/
+
         
         /** Tab de question */
         this.question = [['1.	Quelle variété de niébé comptez-vous produire ?','A.	Mobenga','B.	KVX 442','C.	Bengsiido', 'D.  Autres'],
         ['2.	Quel revenu souhaitez-vous obtenir après la vente?','A.	   Moins de 50 000 F','B.	Entre 50 000 et  100 000 F','C.	Entre 100 000 et 200 000 F','D.	Plus de 200 000 F'],
-        ['3.	Sur quelle superficie  comptez-vous produire votre niébé ?','A.	Entre 0,25 et un 1 Hectare','B.	Entre 1 et 3 Ha','C.	Entre 3 et  5 Ha'],
+        ['3.	Sur quelle superficie  comptez-vous produire votre niébé ?','A.	Entre 0,25 et un 1 Hectare','B.	Entre 1 et 3 Ha','C.	Entre 3 et  5 Ha', 'D.    Autres'],
         ['4.	A quelle période de l’année souhaitez-vous vendre ?','A.	Entre janvier et mars','B.	Entre avril et juin','C.	Entre juillet et septembre','D.	Entre octobre et décembre'],
         ['5.	Combien de sacs de 100 kg  de niébé espérez-vous récolter  ?','A.	Moins de 5 sacs ','B.	Entre 5 et 20 sacs','C.	Entre 21 et 30 sacs','D.	Plus de 50 sacs'],
         ['6.	Combien vous coute les équipements ?','A.	Moins de 10 000 F','B.	Entre 10 000 et 20 000 F','C.	Entre 20 005 et 50 000 F','D.	Plus de 50 000 F'],
@@ -57,7 +51,6 @@ export class SuitePage {
         ['14.	A quel prix souhaitez-vous vendre  le  Kg  votre niébé ?','A.	Entre 0 et 250 F','B.	Entre 255 et 400 F','C.	Entre 405 et 600 F','D.	Plus de 600 F']];
   
   
-        this.audio = [];
         for (var i = 0; i < this.index.length; i++)
             this.audio.push(new Audio('assets/audio/Francais/' + this.index[i] + '.m4a'));
             
@@ -78,44 +71,7 @@ export class SuitePage {
         
  showAlert() 
  {
-     var resul1 = this.actor[1];
-     var message1;
-     var message0;
-     var message2;
-     var message3;
-     var message4;
-     
-     if ( this.actor[2] === '1')
-    {
-        if ( this.actor[4] === '3' || this.actor[4] === '4')
-                message0 = "En supposant un rendement maximal de 2 tonnes par ha votre superficie ne vous permet pas d’atteindre  ce niveau de production";
-    }
-     else if ( this.actor[2] === '2')
-     {
-        if ( this.actor[4] === '1')
-                message0 = "En supposant un rendement maximal de 2 tonnes par ha votre superficie vous permet d’avoir plus de production si vous suivez bien l’itinéraire";
-     }
-     else if ( this.actor[2] === '3')
-     {
-        if ( this.actor[4] !== '4')
-                message0 = "En supposant un rendement maximal de 2 tonnes par ha, votre superficie ne vous permet pas d’avoir plus de production si vous suivez bien l’itinéraire";
-     }
-     if (this.actor[11] > this.actor[4])
-            message1 = "Attention, vos besoins de niébé semblent supérieurs à votre production";
-     if ( this.actor[12] > this.actor[4] )
-            message2 = "Attention, vos besoins de  vente de niébé semblent supérieurs à votre production";
-     if ( this.actor[13] === '4')
-            message3 = "Attention, il est généralement difficile de pouvoir vendre à ce prix";
-     if ( this.actor[3] === '4')
-            message4 = "Attention, les prix sont géneralement plus bas sur cette période à cause de l’offre parfois importante de niébé";
-            
-    let alert = this.alerCtrl.create({
-      title: 'Attention !',
-      subTitle: message4,
-      buttons: ['OK']
-    });
-
-    alert.present()
+     this.navCtrl.push(ContactPage, {actor: this.actor}); 
   }
   
   play(i)

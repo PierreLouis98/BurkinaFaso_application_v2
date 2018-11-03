@@ -14,6 +14,7 @@ export class FicheSuitePage
     reponse: string[];
     index: string;
     question: string[];
+    score: string;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) 
   {
@@ -21,6 +22,7 @@ export class FicheSuitePage
         this.reponse = navParams.get('reponse');
         this.index = navParams.get('index');
         this.question = navParams.get('question');
+        this.score = navParams.get('score');
   }
  
   image()

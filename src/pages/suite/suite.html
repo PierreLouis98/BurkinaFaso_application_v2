@@ -36,7 +36,7 @@
                 </ion-col>
             </ion-row>
 
-            <ion-list radio-group [(ngModel)]="actor2">
+            <ion-list radio-group [(ngModel)]="actor[i]">
                 <div></div>
                 <h2>Question {{this.item.ind}}</h2>
                 <!-- utiliser un index -->
@@ -62,6 +62,27 @@
                 </ion-item>
             </ion-list>
         </ion-slide>
+        
+             <ion-slide>
+            <ion-row>
+                <ion-col width-50 style="text-align: center">
+                    <button ion-button large [color]="c" round (click)="showAlert()">Valider</button>
+                </ion-col>
+            </ion-row>
+                 {{this.avertissement[0]}}
+                 {{this.avertissement[1]}}
+                 {{this.avertissement[2]}}
+                 {{this.avertissement[3]}}
+                 {{this.avertissement[4]}}
+         </ion-slide>
+        
+    <!--     <ion-slide>
+                <h2>Récapitulatif:</h2>
+                <h2 *ngFor="let item of items; let i = index">
+                {{message[i]}};
+                </h2>
+             
+         </ion-slide>-->
 
 
     </ion-slides>

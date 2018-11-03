@@ -57,16 +57,10 @@
         <ion-slide>
             <ion-row>
                 <ion-col width-50 style="text-align: center">
-                    <button ion-button large [color]="c" round (click)="showAlert(selectedItem.ind)">Valider</button>
+                    <button ion-button large [color]="c" round (click)="gotoResultat($event, selectedItem.ind)">Valider</button>
                 </ion-col>
             </ion-row>
-            <ion-row>
-                <ion-col width-50 style="text-align: center">
-                    <button ion-button large [color]="c" round (click)="gotoResultat($event)">Resultat</button>
-                </ion-col>
-            </ion-row>
- 
-         </ion-slide>
+          </ion-slide>
      
 
     </ion-slides>

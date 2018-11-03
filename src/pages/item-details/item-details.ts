@@ -14,7 +14,7 @@ import { FicheSuitePage } from '../fiche-suite/fiche-suite';
 
 export class ItemDetailsPage {
   selectedItem: any;
-  actor: string[] = ['0','0','0','0','0','0','0','0','0','0','0','0']
+  actor: string[] = ['0','0','0','0','0','0','0','0','0','0','0','0'];
   
   c: string = "vert";
   audio: any[];
@@ -83,9 +83,21 @@ showAlert(i)
   } 
   
   
-  gotoResultat(event)
+  gotoResultat(event, i)
   {
-        this.navCtrl.push(FicheSuitePage, {etape: this.selectedItem.note, reponse: this.selectedItem.reponse, index: this.selectedItem.ind, question: this.b_question}); 
+     var rep: string[] = this.actor;
+     var b_rep = this.selectedItem.reponse;
+     var gagne: number = 0;
+     var pt;
+    
+    for (var j = 0; j < b_rep.length; j++)
+    {
+        if ( rep[j] === b_rep[j] )
+            gagne++;
+    }
+    pt = gagne + ' points';
+
+        this.navCtrl.push(FicheSuitePage, {etape: this.selectedItem.note, reponse: this.selectedItem.reponse, index: this.selectedItem.ind, question: this.b_question, score: pt}); 
   } 
   
   
