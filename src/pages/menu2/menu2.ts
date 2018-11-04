@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ContactPage } from '../contact/contact';
+/**import { ContactPage } from '../contact/contact';*/
 import { ListPage } from '../list/list';
 import { SuitePage } from '../suite/suite';
 
@@ -20,10 +20,10 @@ export class Menu2Page {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Menu2Page');
   }
-  
+  /**
    gotoContact(){
         this.navCtrl.push(ContactPage);
-  }
+  }*/
 
   gotoQuizz(){
         this.navCtrl.push(ListPage);
