@@ -26,26 +26,26 @@ import { ModalController } from 'ionic-angular';
          if ( this.actor[2] === '1')
     {
         if ( this.actor[4] === '3' || this.actor[4] === '4')
-                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha votre superficie ne vous permet pas d’atteindre  ce niveau de production";
+                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha votre superficie ne vous permet pas d’atteindre  ce niveau de production. ";
     }
      else if ( this.actor[2] === '2')
      {
         if ( this.actor[4] === '1')
-                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha votre superficie vous permet d’avoir plus de production si vous suivez bien l’itinéraire";
+                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha votre superficie vous permet d’avoir plus de production si vous suivez bien l’itinéraire. ";
      }
      else if ( this.actor[2] === '3')
      {
         if ( this.actor[4] !== '4')
-                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha, votre superficie ne vous permet pas d’avoir plus de production si vous suivez bien l’itinéraire";
+                this.avertissement[0] = "En supposant un rendement maximal de 2 tonnes par ha, votre superficie ne vous permet pas d’avoir plus de production si vous suivez bien l’itinéraire.";
      }
      if (this.actor[11] > this.actor[4])
-            this.avertissement[1] = "Attention, vos besoins de niébé semblent supérieurs à votre production";
+            this.avertissement[1] = "Attention, vos besoins de niébé semblent supérieurs à votre production. ";
      if ( this.actor[12] > this.actor[4] )
-            this.avertissement[2] = "Attention, vos besoins de  vente de niébé semblent supérieurs à votre production";
+            this.avertissement[2] = "Attention, vos besoins de  vente de niébé semblent supérieurs à votre production. ";
      if ( this.actor[13] === '4')
-            this.avertissement[3] = "Attention, il est généralement difficile de pouvoir vendre à ce prix";
+            this.avertissement[3] = "Attention, il est généralement difficile de pouvoir vendre à ce prix. ";
      if ( this.actor[3] === '4')
-            this.avertissement[4] = "Attention, les prix sont géneralement plus bas sur cette période à cause de l’offre parfois importante de niébé";
+            this.avertissement[4] = "Attention, les prix sont géneralement plus bas sur cette période à cause de l’offre parfois importante de niébé. ";
   }
 
 
