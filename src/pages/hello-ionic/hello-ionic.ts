@@ -11,8 +11,8 @@ import { Menu2Page } from '../menu2/menu2';
 
 export class HelloIonicPage {
 
-  Myaudio: string = 'assets/audio/Francais/accueil.m4a';
-  audio: any = new Audio('assets/audio/Francais/accueil.m4a');
+ 
+  audio: any = new Audio('assets/audio/Francais/debut.m4a');
   
   
 
@@ -24,8 +24,11 @@ export class HelloIonicPage {
     
   gotoMenu2(){  this.nav.setRoot(Menu2Page);  }
   
-  play(){ this.audio.play(); }
+  play()
+  { 
+    this.audio.play(); 
+  }
   stop(){ this.audio.pause(); }
-  begin(){ this.audio.currentTime = 0; }
+  begin(){  this.audio.currentTime = 0; }
   
 }
